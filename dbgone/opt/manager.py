@@ -4,7 +4,7 @@ from typing import Optional, List
 
 from ..config import Config
 from .params import OptType
-from .params.base import OptParamBase
+from .params import OptParamBase
 
 # region Optuna
 class OptParamsManager:
