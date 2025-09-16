@@ -191,6 +191,10 @@ class AddictionalConfig(Config):
                 update_dict(d=result, value=add_value, keys=keys_list[1])
         else:
             result = super().get(*keys, default=default)
+            
+        if isinstance(result, dict):
+            for k,v in result.items():
+                result[k] = self.get(*keys, k , default=v, from_additions=from_additions)
         return result
     
     def save(self, save_path, save_addictions=True):
